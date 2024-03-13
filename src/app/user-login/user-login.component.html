@@ -1,0 +1,187 @@
+<!-- <div class=" position-relative" >
+    <div class="row">
+        <div class="col-md-6">
+       
+            <img src="../assets/LoginInImage.jpg" alt="Meal Image"  style="width:203%; height:100%;">
+        </div>
+        
+
+        <div class="col-md-6 position-absolute top-50 start-50 translate-middle" >
+
+            <form  *ngIf="show; else registrationForm " [formGroup]="LoginForm" (submit)="LoginFormSubmit()" class="my-form"    >
+                <div class="form-group">
+                    <label for="EmailId">Email:</label>
+                    <input type="email" class="form-control" id="EmailId" placeholder="Enter your Email" name="EmailId" formControlName="EmailId">
+                    <span class="text-danger" *ngIf="emailValidator && emailValidator.invalid && emailValidator.touched">Invalid Email</span>
+                </div>
+                <div class="form-group">
+                    <label for="Password">Password:</label>
+                    <input type="password" class="form-control" id="Password" placeholder="Enter Your Password" name="Password" formControlName="Password">
+                    <small class="form-text text-muted " style="font-weight:bold;">*Password must contain at least 1 uppercase letter and 1 special symbol.</small> <br>
+                    <span class="text-danger" *ngIf="passwordValidator && passwordValidator.invalid && passwordValidator.touched">Invalid Password</span>
+                </div>
+                <button type="submit" class="btn btn-success btn-block" [disabled]="LoginForm.invalid">Login</button>
+      
+
+                <a  class="btn btn-link" (click)="onToggleForm()">Registration</a> 
+                <a  class="btn btn-link" (click)="onSelect()">Forget Password</a> 
+            </form>
+            <ng-template #registrationForm > 
+                <form [formGroup]="RegistrationForm" (submit)="RegistrationFormSubmit()" class="my-form" [hidden]="show">
+
+                    <div class="form-group">
+                        <label for="EMPLOYEEID">*Employee Id:</label>
+                        <input type="number" class="form-control" id="EMPLOYEEID" placeholder="Enter your Employee Id" name="EMPLOYEEID" formControlName="EMPLOYEEID">
+                        <span class="text-danger" *ngIf="empIdValidator && empIdValidator.invalid && empIdValidator.touched">Invalid EmployeeID</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="EmpName">*Name:</label>
+                        <input type="text" class="form-control" id="EmpName" placeholder="Enter your Name" name="EmpName" formControlName="EmpName">
+                        <span class="text-danger" *ngIf="empNameValidator && empNameValidator.invalid && empNameValidator.touched">Invalid Name</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="EMAIL">*Email:</label>
+                        <input type="email" class="form-control" id="EMAIL" placeholder="Enter your Email" name="EMAIL" formControlName="EMAIL">
+                        <span class="text-danger" *ngIf="RegisteremailValidator && RegisteremailValidator.invalid && RegisteremailValidator.touched">Invalid Email</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="PHONENUMBER">*Phonenumber:</label>
+                        <input type="text" class="form-control" id="PHONENUMBER" placeholder="Enter your Email" name="PHONENUMBER" formControlName="PHONENUMBER">
+                        <span class="text-danger" *ngIf="phonNoValidator && phonNoValidator.invalid && phonNoValidator.touched">Invalid Phone Number</span>
+                    </div>
+                 
+               
+                    <div class="form-group">
+                        <label for="PASSWORD">*Password:</label>
+                        <input type="password" class="form-control" id="PASSWORD" placeholder="Enter Your Password" name="PASSWORD" formControlName="PASSWORD">
+                        <small class="form-text text-muted " style="font-weight:bold;">*Password must contain at least 1 uppercase letter and 1 special symbol.</small> <br>
+                        <span class="text-danger" *ngIf="RegisterpasswordValidator && RegisterpasswordValidator.invalid && RegisterpasswordValidator.touched">Invalid Password</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="Role">*Role:</label>
+                        <select class="form-control" id="Role" name="Role" formControlName="Role">
+                            <option value="" disabled selected>Select a role</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Engineering">Engineering</option>
+                          </select>
+                        <span class="text-danger" *ngIf="roleValidator && roleValidator.invalid && roleValidator.touched">Please select a role</span>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block" [disabled]="RegistrationForm.invalid">Registration</button>
+                    <a  class="btn btn-link" (click)="onToggleForm()">Login</a>
+                    
+                </form>
+            </ng-template>
+           
+         
+        </div>
+       
+    </div>
+
+</div>
+
+
+
+ -->
+ <div class="container-fluid d-flex flex-row position-relative">
+    <div class="col-md-6 p-0 overflow-hidden">
+      <img src="../assets/LoginForm.avif" alt="Meal Image" class="img-fluid rounded-end shadow-sm h-100">
+    </div>
+  
+    <div class="col-md-6  rounded shadow-sm d-flex flex-column justify-content-center px-4 py-5">
+      <div class="text-center mb-4">
+        <h3 class="fw-bold">Welcome to Rishabh's Meal Booking!</h3>
+        <p class="text-muted">Please login or register to continue.</p>
+      </div>
+      <ng-container *ngIf="show; else registrationForm">
+        <form [formGroup]="LoginForm" (submit)="LoginFormSubmit()" class="my-form  ">
+          <div class="form-group mb-3">
+            <label for="EmailId" class="form-label">Email:</label>
+            <input type="email" class="form-control rounded-pill shadow-sm" id="EmailId" placeholder="Enter your Email" name="EmailId" formControlName="EmailId">
+            <span class="text-danger" *ngIf="emailValidator && emailValidator.invalid && emailValidator.touched">
+              Invalid Email
+            </span>
+          </div>
+          <div class="form-group mb-3">
+            <label for="Password" class="form-label">Password:</label>
+            <input type="password" class="form-control rounded-pill shadow-sm" id="Password" placeholder="Enter Your Password" name="Password" formControlName="Password">
+            <small class="form-text text-muted">
+              *Password must contain first letter in uppercase letter and 1 special symbol.
+            </small><br>
+            <span class="text-danger" *ngIf="passwordValidator && passwordValidator.invalid && passwordValidator.touched">
+              Invalid Password
+            </span>
+          </div>
+          <button type="submit" class="btn btn-primary w-100 rounded-pill shadow-sm" [disabled]="LoginForm.invalid">
+            Login
+          </button>
+          <div class="mt-3 text-end">
+            <a class="text-decoration-none" style="cursor: pointer;" (click)="onToggleForm()">Register Now?</a>
+          </div>
+          <!-- <div class="mt-3 text-end">
+            <a class="text-decoration-none" style="cursor: pointer;" (click)="onSelect()">Update Password?</a>
+          </div> -->
+        </form>
+      </ng-container>
+      <ng-template #registrationForm>
+        <form [formGroup]="RegistrationForm" (submit)="RegistrationFormSubmit()" class="my-form ">
+          <div class="form-group mb-3">
+            <label for="EMPLOYEEID" class="form-label">*Employee Id:</label>
+            <input type="number" class="form-control rounded-pill shadow-sm" id="EMPLOYEEID" placeholder="Enter your Employee Id" name="EMPLOYEEID" formControlName="EMPLOYEEID">
+            <span class="text-danger" *ngIf="empIdValidator && empIdValidator.invalid && empIdValidator.touched">
+              Invalid EmployeeID
+            </span>
+          </div>
+          <div class="form-group mb-3">
+            <label for="EmpName" class="form-label">*Name:</label>
+            <input type="text" class="form-control rounded-pill shadow-sm" id="EmpName" placeholder="Enter your Name" name="EmpName" formControlName="EmpName">
+            <span class="text-danger" *ngIf="empNameValidator && empNameValidator.invalid && empNameValidator.touched">
+              Invalid Name
+            </span>
+          </div>
+          <div class="form-group mb-3">
+            <label for="EMAIL" class="form-label">*Email:</label>
+            <input type="email" class="form-control rounded-pill shadow-sm" id="EMAIL" placeholder="Enter your Email" name="EMAIL" formControlName="EMAIL">
+            <span class="text-danger" *ngIf="RegisteremailValidator && RegisteremailValidator.invalid && RegisteremailValidator.touched">
+              Invalid Email
+            </span>
+          </div>
+          <div class="form-group mb-3">
+            <label for="PHONENUMBER" class="form-label">*Phone Number:</label>
+            <input type="tel" class="form-control rounded-pill shadow-sm" id="PHONENUMBER" placeholder="Enter your Phone Number" name="PHONENUMBER" formControlName="PHONENUMBER">
+            <span class="text-danger" *ngIf="phonNoValidator && phonNoValidator.invalid && phonNoValidator.touched">
+              Invalid Phone Number
+            </span>
+          </div>
+          <div class="form-group mb-3">
+            <label for="PASSWORD" class="form-label">*Password:</label>
+            <input type="password" class="form-control rounded-pill shadow-sm" id="PASSWORD" placeholder="Enter Your Password" name="PASSWORD" formControlName="PASSWORD">
+            <small class="form-text text-muted">
+              *Password must contain first letter in uppercase letter and 1 special symbol.
+            </small><br>
+            <span class="text-danger" *ngIf="RegisterpasswordValidator && RegisterpasswordValidator.invalid && RegisterpasswordValidator.touched">
+              Invalid Password
+            </span>
+          </div>
+          <div class="form-group mb-3">
+            <label for="Role" class="form-label">*Role:</label>
+            <select class="form-select rounded-pill shadow-sm" id="Role" name="Role" formControlName="Role">
+              <option value="" disabled selected>Select a role</option>
+              <option value="Admin">Admin</option>
+              <option value="Engineerg">Engineering</option>
+            </select>
+            <span class="text-danger" *ngIf="roleValidator && roleValidator.invalid && roleValidator.touched">
+              Please select a role
+            </span>
+          </div>
+          <button type="submit" class="btn btn-primary w-100 rounded-pill shadow-sm" [disabled]="RegistrationForm.invalid">
+            Register
+          </button>
+          <div class="mt-3 text-end">
+            <a class="text-decoration-none" style="cursor: pointer;" (click)="onToggleForm()">Login?</a>
+          </div>
+          </form>
+          </ng-template>
+          </div>
+          </div>
+          
+  

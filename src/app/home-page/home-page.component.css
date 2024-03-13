@@ -1,0 +1,26 @@
+
+.form-group {
+  margin-top: 20px;
+}
+
+.btn-block {
+  transition: background-color 0.3s;
+}
+
+.btn-block:hover {
+  background-color: #555; /* Change the color as needed */
+}
+
+
+
+
+.demo-inline-calendar-card {
+  width: 500px;
+  
+}
+
+
+/* home-page.component.css */
+
+
+  

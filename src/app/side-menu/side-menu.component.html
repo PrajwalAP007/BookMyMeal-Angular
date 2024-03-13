@@ -1,0 +1,74 @@
+<div [ngSwitch]="navBarType">
+    <nav class="navbar navbar-expand-lg bg-light ">
+        <div class="container-fluid">
+            <img src="../assets/rishabh.webp" alt="">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mr-auto" *ngSwitchCase="'default'">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="app-user-login">Sign In</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="app-about-us">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="app-privacy-policy">Privacy Policy</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="app-terms-condtion">Terms & Conditions</a>
+                </li>
+            
+        
+              </ul>
+            <ul class="navbar-nav" *ngSwitchCase="'mainNavBar'">
+        
+              <li class="nav-item dropdown">
+                <a class="nav-link active dropdown-toggle" routerLink="app-home-page" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  DashBoard
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" routerLink="app-view-booking-history">View Booking</a></li>
+                
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="app-about-us">About Us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link active dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Coupon
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" routerLink="app-coupon-pre-redemption">Your Coupons</a></li>
+
+                </ul>
+              </li>
+          
+              <li class="nav-item">
+                <a class="nav-link" routerLink="app-terms-condtion">Terms & Condition</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="app-privacy-policy">Privacy Policy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="app-view-booking-history">Cancel Booking</a>
+              </li>
+          
+              
+              <li class="nav-item">
+                <button class="nav-link" routerLink="app-update-password" >Update Password</button>
+                
+              </li>
+              <li class="nav-item">
+                <button class="btn btn-danger"   (click)="LogOut()">SignOut</button>
+                
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+</div>
+

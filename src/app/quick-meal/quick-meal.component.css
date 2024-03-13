@@ -1,0 +1,25 @@
+
+
+.container {
+     /* Make the container take the full height of the viewport */
+    display: flex;
+    align-items: center; /* Center the content vertically */
+}
+
+.my-form {
+    padding: 20px;
+
+    margin: 0; /* Remove margin to avoid spacing issues */
+}
+
+.my-form label {
+    font-weight: bold;
+}
+
+.my-form input {
+    margin-bottom: 15px;
+}
+
+.my-form button {
+    margin-top: 15px;
+}

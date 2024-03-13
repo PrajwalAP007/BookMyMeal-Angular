@@ -1,0 +1,72 @@
+<!-- <div class="container-fluid">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z5">
+        <mat-text-column name="Date"></mat-text-column>
+        <mat-text-column name="Day"></mat-text-column>
+        <mat-text-column name="EmployeeName"></mat-text-column>
+        <mat-text-column name="EmployeeId"></mat-text-column>
+        <mat-text-column name="CouponNo"></mat-text-column>
+        <mat-text-column name="RedemptionStatus"></mat-text-column>
+        <mat-text-column name="MealType"></mat-text-column>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+</div>
+ -->
+
+ <div class="body"  [hidden]="HiddenStatus" >
+  <marquee  direction="right" style="color: red; ">Only for 2 Minitues Coupon will be displayed</marquee>
+    <div class="container mt-5">
+      <div class="d-flex justify-content-center row">
+        <div class="col-md-6" *ngFor="let item of dataSource">
+   
+          <div class="coupon p-3 bg-white">
+          
+            <div class="row no-gutters align-items-center">
+              <div class="col-md-4 d-flex">
+                <img src="../assets/rishabh.webp" alt="Image" style="width: 60px;">
+                <div class="ml-3">
+                  <span class="d-block" >Rishabh Software</span>
+                  <span class="text-black-50">Meal Coupon</span>
+                </div>
+              </div>
+              <div class="col-md-8 d-flex justify-content-between">
+                <div>
+                  <h3 class="mb-2">Status: <span style="font-weight: 700;color: green;">{{item.RedemptionStatus}}</span></h3>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <span class="mr-2 fw-bold">Date:</span>
+                      <span>{{item.Date|date}}</span>
+                    </li>
+                    <li class="list-group-item">
+                      <span class="mr-2 fw-bold">Day:</span>
+                      <span>{{item.Day}}</span>
+                    </li>
+                    <li class="list-group-item">
+                      <span class="mr-2 fw-bold">Employee Id:</span>
+                      <span>{{item.EmployeeId}}</span>
+                    </li>
+                    <li class="list-group-item">
+                      <span class="mr-2 fw-bold">Employee Name:</span>
+                      <span>{{item.EmployeeName}}</span>
+                    </li>
+                    <li class="list-group-item">
+                      <span class="mr-2 fw-bold">Meal Type:</span>
+                      <span>{{item.MealType}}</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="d-flex flex-column align-items-end">
+                  <span class="fw-bold mb-2">Coupon Code:</span>
+                  <span class="border border-success px-3 rounded code">{{item.CouponNo}}</span>
+                  <countdown #cd [config]="config" (event)="handleEvent($event)" id="countDown" style="color: red;"></countdown>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Include ngx-countdown in your template -->
+

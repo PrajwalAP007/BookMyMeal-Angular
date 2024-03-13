@@ -1,0 +1,50 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z10">
+  <ng-container matColumnDef="OrderId">
+    <th mat-header-cell *matHeaderCellDef> Order Id </th>
+    <td mat-cell *matCellDef="let element"> {{element.OrderId}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="OrderBookedFor">
+    <th mat-header-cell *matHeaderCellDef> Order BookedFor </th>
+    <td mat-cell *matCellDef="let element"> {{element.OrderBookedFor}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="OrderType">
+    <th mat-header-cell *matHeaderCellDef> Order Type </th>
+    <td mat-cell *matCellDef="let element"> {{element.OrderType}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="BookingDate">
+    <th mat-header-cell *matHeaderCellDef> Booking Date </th>
+    <td mat-cell *matCellDef="let element"> {{element.BookingDate|date}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="BookingInitialDate">
+    <th mat-header-cell *matHeaderCellDef> Booking Start Date </th>
+    <td mat-cell *matCellDef="let element"> {{element.BookingInitialDate|date}} </td>
+  </ng-container>
+  <ng-container matColumnDef="BookingEndDate">
+    <th mat-header-cell *matHeaderCellDef> Booking End Date </th>
+    <td mat-cell *matCellDef="let element"> {{element.BookingEndDate|date}} </td>
+  </ng-container>
+  <ng-container matColumnDef="MealType">
+    <th mat-header-cell *matHeaderCellDef> Meal Type </th>
+    <td mat-cell *matCellDef="let element"> {{element.MealType}} </td>
+  </ng-container>
+  <ng-container matColumnDef="OrderStatus">
+    <th mat-header-cell *matHeaderCellDef> Order Status </th>
+    <td mat-cell *matCellDef="let element"> {{element.OrderStatus}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="CancelBooking">
+    <th mat-header-cell *matHeaderCellDef>Cancel Booking</th>
+    <td mat-cell *matCellDef="let element"><button class="btn btn-danger" (click)="CancelBookingOfLunch(element.OrderId)"
+      [disabled]="isBookingExpired(element.BookingEndDate)">Cancel Booking</button> </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+</table>

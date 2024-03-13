@@ -1,0 +1,28 @@
+<!-- 
+<div class=" container position-relative" >
+    <div class="row">
+        <div class="col-md-6">
+         
+            <img src="../assets/LoginInImage.jpg" alt="Meal Image"  style="width:200%; height:100%;">
+        </div>
+        <div class="col-md-6 position-absolute top-50 start-50 translate-middle">
+
+            <form [formGroup]="QuickMealForm" (submit)="QuickMealFormSubmit()" class="my-form">
+
+                <div class="form-group">
+                    <label for="EmployeeId">*Your Id:</label>
+                    <input type="number" class="form-control" id="EmployeeId" placeholder="Enter your Employee Id" name="Empid" formControlName="Empid">
+                    <span class="text-danger" *ngIf="empIdValidator && empIdValidator.invalid && empIdValidator.touched">Invalid EmployeeID</span>
+                </div>
+                <div class="form-group">
+                    <label for="EmployeeId">*Booking To:</label>
+                    <input type="number" class="form-control" id="EmployeeIdFor" placeholder="Enter your Employee Id" name="EmpidFor" formControlName="EmpidFor">
+                    <span class="text-danger" *ngIf="empIdBookedForValidator && empIdBookedForValidator.invalid && empIdBookedForValidator.touched">Invalid EmployeeID</span>
+                </div>
+          
+                <button type="submit" class="btn btn-success btn-block" [disabled]="QuickMealForm.invalid">Submit</button>
+            </form>
+        </div>
+    </div>
+
+</div> -->

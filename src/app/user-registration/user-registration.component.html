@@ -1,0 +1,54 @@
+
+<div class="position-relative" [hidden]="show">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Left side with image -->
+            <img src="../assets/LoginInImage.jpg" alt="Meal Image"  style="width:200%; height:100%;">
+        </div>
+        <div class="col-md-6 position-absolute top-50 start-50 translate-middle">
+            <!-- Right side with login form -->
+            <form [formGroup]="RegistrationForm" (submit)="RegistrationFormSubmit()" class="my-form">
+
+                <div class="form-group">
+                    <label for="EmployeeId">*Employee Id:</label>
+                    <input type="number" class="form-control" id="EmployeeId" placeholder="Enter your Employee Id" name="Empid" formControlName="Empid">
+                    <span class="text-danger" *ngIf="empIdValidator && empIdValidator.invalid && empIdValidator.touched">Invalid EmployeeID</span>
+                </div>
+                <div class="form-group">
+                    <label for="Empname">*Name:</label>
+                    <input type="text" class="form-control" id="Empname" placeholder="Enter your Name" name="Empname" formControlName="Empname">
+                    <span class="text-danger" *ngIf="empNameValidator && empNameValidator.invalid && empNameValidator.touched">Invalid Name</span>
+                </div>
+                <div class="form-group">
+                    <label for="EmailId">*Email:</label>
+                    <input type="email" class="form-control" id="EmailId" placeholder="Enter your Email" name="EmailId" formControlName="EmailId">
+                    <span class="text-danger" *ngIf="emailValidator && emailValidator.invalid && emailValidator.touched">Invalid Email</span>
+                </div>
+                <div class="form-group">
+                    <label for="PhonNo">*Phonenumber:</label>
+                    <input type="text" class="form-control" id="PhonNo" placeholder="Enter your Email" name="PhonNo" formControlName="PhonNo">
+                    <span class="text-danger" *ngIf="phonNoValidator && phonNoValidator.invalid && phonNoValidator.touched">Invalid Phone Number</span>
+                </div>
+             
+           
+                <div class="form-group">
+                    <label for="Password">*Password:</label>
+                    <input type="password" class="form-control" id="Password" placeholder="Enter Your Password" name="Password" formControlName="Password">
+                    <small class="form-text text-muted " style="font-weight:bold;">*Password must contain at least 1 uppercase letter and 1 special symbol.</small> <br>
+                    <span class="text-danger" *ngIf="passwordValidator && passwordValidator.invalid && passwordValidator.touched">Invalid Password</span>
+                </div>
+                <div class="form-group">
+                    <label for="Role">*Role:</label>
+                    <select class="form-control" id="Role" name="Role" formControlName="Role">
+                        <option value="" disabled selected>Select a role</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Engineering">Engineering</option>
+                    </select>
+                    <span class="text-danger" *ngIf="roleValidator && roleValidator.invalid && roleValidator.touched">Please select a role</span>
+                </div>
+                <button type="submit" class="btn btn-success btn-block" [disabled]="RegistrationForm.invalid">Registration</button>
+            </form>
+        </div>
+    </div>
+
+</div>

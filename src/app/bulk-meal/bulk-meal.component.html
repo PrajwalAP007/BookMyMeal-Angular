@@ -1,0 +1,135 @@
+<div class="container-fluid d-flex flex-row">
+    <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+        <img src="../assets/BulkMealPhoto.jpg" alt="Meal Image" class="img-fluid rounded shadow-sm "
+            style="height: 670px;">
+    </div>
+    <div class="col-md-6 d-flex flex-column justify-content-center px-4">
+
+        <div class="text-center">
+
+          
+                <h3 class="text-center" style="font-size:large ; font-weight:500 ">Bulk Meal Booking</h3>
+  
+        </div>
+        <div class="text-center"></div>
+        <!-- <form [formGroup]="BulkMealForm" (submit)="BulkMealFormSubmit()" class="my-form">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="EmployeeId" class="form-label required">Booking To:</label>
+                        <input type="number" class="form-control rounded shadow-sm" id="EmployeeIdFor"
+                            placeholder="Enter Employee Id" name="EmpidFor" formControlName="EmpidFor">
+                        <div class="invalid-feedback"
+                            *ngIf="empIdBookedForValidator && empIdBookedForValidator.invalid && empIdBookedForValidator.touched">
+                            Invalid Employee ID
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="InitialDate" class="form-label required">Initial Date:</label>
+                        <input type="date" class="form-control rounded shadow-sm" id="InitialDate"
+                            placeholder="Choose Start Date" name="InitialDate" formControlName="InitialDate">
+                        <div class="invalid-feedback"
+                            *ngIf="InitialDateValidator && InitialDateValidator.invalid && InitialDateValidator.touched">
+                            Invalid Initial Date
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="EndDate" class="form-label required">End Date:</label>
+                        <input type="date" class="form-control rounded shadow-sm" id="EndDate"
+                            placeholder="Choose End Date" name="EndDate" formControlName="EndDate">
+                        <div class="invalid-feedback"
+                            *ngIf="EndDateValidator && EndDateValidator.invalid && EndDateValidator.touched">
+                            Invalid End Date
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Meal" class="form-label required">Meal Type:</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="lunch" value="Lunch"
+                                formControlName="Meal">
+                            <label class="form-check-label" for="lunch">Lunch</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="dinner" value="Dinner"
+                                formControlName="Meal">
+                            <label class="form-check-label" for="dinner">Dinner</label>
+                        </div>
+                        <div class="invalid-feedback" style="color: red;"
+                            *ngIf="mealtypeValidator && mealtypeValidator.invalid && mealtypeValidator.touched">
+                            Please Select One Meal Type
+                        </div>
+                    </div>
+                  </div>
+                </div>
+        
+                <button type="submit" class="btn btn-primary w-100 shadow-sm" [disabled]="BulkMealForm.invalid">Submit</button>
+            </form> -->
+            <form [formGroup]="BulkMealForm" (submit)="BulkMealFormSubmit()" class="bulk-form  border p-4" >
+                <div class="mb-3"[hidden]="isAdmin">
+                  <div class="form-group" >
+                    <label for="EmployeeId" class="form-label required" style="font-weight:bold ;">Booking To:</label>
+                    <input type="number" class="form-control rounded shadow-sm" id="EmployeeIdFor" placeholder="Enter Employee Id"
+                      name="EmpidFor" formControlName="EmpidFor">
+                    <!-- <div class="invalid-feedback"
+                      *ngIf="empIdBookedForValidator && empIdBookedForValidator.invalid && empIdBookedForValidator.touched">
+                      Invalid Employee ID
+                    </div> -->
+                  </div>
+                </div>
+              
+                <div class="mb-3">
+                  <div class="form-group">
+                    <label for="InitialDate" class="form-label required" style="font-weight:bold ;">Initial Date:</label>
+                    <input type="date" class="form-control rounded shadow-sm" id="InitialDate" placeholder="Choose Start Date"
+                      name="InitialDate" formControlName="InitialDate">
+                    <div class="invalid-feedback"
+                      *ngIf="InitialDateValidator && InitialDateValidator.invalid && InitialDateValidator.touched">
+                      Invalid Initial Date
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="mb-3">
+                  <div class="form-group">
+                    <label for="EndDate" class="form-label required" style="font-weight:bold ;">End Date:</label>
+                    <input type="date" class="form-control rounded shadow-sm" id="EndDate" placeholder="Choose End Date"
+                      name="EndDate" formControlName="EndDate">
+                    <div class="invalid-feedback"
+                      *ngIf="EndDateValidator && EndDateValidator.invalid && EndDateValidator.touched">
+                      Invalid End Date
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="mb-3">
+                  <div class="form-group">
+                    <label class="form-label required" style="font-weight:bold ;">Meal Type:</label>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" id="lunch" value="Lunch" formControlName="Meal">
+                      <label class="form-check-label" for="lunch">Lunch</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" id="dinner" value="Dinner" formControlName="Meal">
+                      <label class="form-check-label" for="dinner">Dinner</label>
+                    </div>
+                    <div class="invalid-feedback" style="color: red;"
+                      *ngIf="mealtypeValidator && mealtypeValidator.invalid && mealtypeValidator.touched">
+                      Please Select One Meal Type
+                    </div>
+                  </div>
+                </div>
+              
+                <button type="submit" class="btn btn-primary w-100 shadow-sm" id="liveToastBtn"  [disabled]="BulkMealForm.invalid">Submit</button>
+
+              </form>
+              
+          
+    </div>

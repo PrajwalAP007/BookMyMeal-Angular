@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Redeem Your Coupon</h1>
+<div mat-dialog-content>
+  <form style="margin-top: 20px;"  [formGroup]="RedemptionForm"  (submit)="redeemCheck()">
+    <label for="CouponNO">CouponNo : </label>
+  <input type="text" name="CouponNo" formControlName="CouponNo" id="CouponNO" placeholder="Enter CouponNo" [(ngModel)]="data.couponNumber"  >
+  <span class="text-danger" *ngIf="couponNoValidator && couponNoValidator.invalid && couponNoValidator.touched">Invalid Coupon</span> <br>
+  
+</form></div>
+<div mat-dialog-actions>
+  <button class="btn btn-danger m-3" mat-dialog-close>Close</button>
+  <button class="btn btn-primary m-3" (click)="redeemCheck()">Redeem</button>
+</div>

@@ -1,0 +1,43 @@
+.container {
+    margin-top: 50px;
+}
+
+h2 {
+    color: #007bff;
+}
+
+p {
+    line-height: 1.6;
+}
+
+.image-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.company-logo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for terms and conditions content */
+h3 {
+    color: #007bff;
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li::before {
+    content: '\2022'; /* Bullet point */
+    color: #007bff;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
